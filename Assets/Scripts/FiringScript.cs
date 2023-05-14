@@ -10,9 +10,11 @@ public class FiringScript : MonoBehaviour
     public float fireingRate = 1f;
     private float timer;
     Rigidbody GunRb;
+    AudioSource soundEffect;
     void Start()
     {
         GunRb = GetComponent<Rigidbody>();
+        soundEffect = GetComponent<AudioSource>();
     }
 
 
@@ -23,6 +25,7 @@ public class FiringScript : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0))
         {
             Shoot();
+        
         }
     }
 
@@ -34,6 +37,7 @@ public class FiringScript : MonoBehaviour
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             bulletRb.velocity = transform.forward * bulletSpeed + GunRb.velocity;
             timer = 0;
+            soundEffect.Play();
         }
     }
 }
