@@ -6,6 +6,7 @@ public class BulletScript : MonoBehaviour
 {
     public float lifetime = 2f;
     private float timer;
+    public float damage = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -14,8 +15,24 @@ public class BulletScript : MonoBehaviour
         GetComponent<Rigidbody>().MoveRotation(rotation);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Check if the bullet collided with an object that can take damage
+        HealthSystem target = collision.gameObject.GetComponent<HealthSystem>();
+        if (target != null)
+        {
+            // Apply damage to the collided object
+            target.TakeDamage(damage);
+        }
+
+        // Destroy the bullet
+        Destroy(gameObject);
+    }
+}
+
+
+// Update is called once per frame
+void Update()
     {
         timer += Time.deltaTime;
         if (timer >= lifetime)

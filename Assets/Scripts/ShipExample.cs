@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows;
 
-public class ShipMovementExample : MonoBehaviour
+public class ShipExample : Damageable
 {
     public float moveSpeed = 10f;
     public float rotationSpeed = 1f;
@@ -15,8 +15,8 @@ public class ShipMovementExample : MonoBehaviour
 
     void Start()
     {
-        shipRb = GetComponent<Rigidbody>();
-
+        health = 100f;
+        maxHealth = 100f;
     }
 
     void Update()
