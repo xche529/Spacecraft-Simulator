@@ -17,6 +17,8 @@ public class ShipExample : Damageable
     {
         health = 100f;
         maxHealth = 100f;
+        shipRb = GetComponent<Rigidbody>();
+        
     }
 
     void Update()
@@ -32,7 +34,7 @@ public class ShipExample : Damageable
         // transform the ship
         Vector3 movement = vertical * transform.forward + horizontal * transform.right - lift * transform.up;
         movement.Normalize();
-        shipRb.AddForce(movement * moveSpeed * Time.deltaTime);
+        shipRb.AddForce(movement * moveSpeed * Time.deltaTime * 1000f);
 
 
         // Rotate the ship
@@ -44,7 +46,7 @@ public class ShipExample : Damageable
 
         // display the velocity
         Vector3 velocity = shipRb.velocity;
-        speedText.text = "Speed: X = " + velocity.x.ToString("F1") + " m/s, Y = " + velocity.y.ToString("F1") + " m/s, Z = " + velocity.z.ToString("F1") + " m/s";
+        speedText.text = "Speed: X = " + velocity.x.ToString("F1") + " m/s, Y = " + velocity.y.ToString("F1") + " m/s, Z = " + velocity.z.ToString("F1") + " m/s, Life = " + this.health.ToString("F1");
     }
 
 }
