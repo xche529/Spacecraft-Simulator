@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : Damageable
+public class BulletScript : MonoBehaviour
 {
     public float lifetime = 2f;
     private float timer;
@@ -12,13 +12,7 @@ public class BulletScript : Damageable
     void Start()
     {
 
-        Quaternion rotation = Quaternion.Euler(90f, 0f, 90f);
-        GetComponent<Rigidbody>().MoveRotation(rotation);
     }
-
-    
-
-
 
 // Update is called once per frame
 void Update()

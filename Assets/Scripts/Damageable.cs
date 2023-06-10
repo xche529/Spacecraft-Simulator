@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Damageable : MonoBehaviour
 {
     protected float maxHealth = 100f; 
-    public float health = 100f;
+    protected float health = 100f;
     public Rigidbody rb;
     public Damageable(){}
 

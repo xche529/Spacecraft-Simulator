@@ -13,7 +13,6 @@ public class FiringScript : MonoBehaviour
     AudioSource soundEffect;
     void Start()
     {
-        GunRb = GetComponent<Rigidbody>();
         soundEffect = GetComponent<AudioSource>();
     }
 
@@ -33,11 +32,27 @@ public class FiringScript : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= 1 / fireingRate)
         {
+            GunRb = GetParentRigidbody(transform);
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             bulletRb.velocity = transform.forward * bulletSpeed + GunRb.velocity;
             timer = 0;
             soundEffect.Play();
         }
+    }
+
+    Rigidbody GetParentRigidbody(Transform childTransform)
+    {
+        Transform parentTransform = childTransform.parent;
+        while (parentTransform != null)
+        {
+            Rigidbody parentRb = parentTransform.GetComponent<Rigidbody>();
+            if (parentRb != null)
+            {
+                return parentRb;
+            }
+            parentTransform = parentTransform.parent;
+        }
+        return null;
     }
 }

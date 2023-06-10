@@ -284,7 +284,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 999938191389505797, guid: b73c452d1c6a2264d891c6e371250af7, type: 3}
       propertyPath: moveSpeed
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 999938191389505797, guid: b73c452d1c6a2264d891c6e371250af7, type: 3}
       propertyPath: speedText
@@ -824,7 +824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5130622847580656491, guid: a7618614d3dc13d4ea1ecbe4bb5e2413, type: 3}
       propertyPath: moveSpeed
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5130622847580656491, guid: a7618614d3dc13d4ea1ecbe4bb5e2413, type: 3}
       propertyPath: speedText
