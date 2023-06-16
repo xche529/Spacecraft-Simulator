@@ -1,17 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Damageable : MonoBehaviour
 {
-    protected float maxHealth = 100f; 
+    protected float maxHealth = 100f;
     public float health = 100f;
     public Rigidbody rb;
-    public Damageable(){}
+    public Damageable() { }
 
-        
-    
-    
+
     public void setHealth(float health)
     {
         this.health = health;
@@ -48,7 +44,7 @@ public abstract class Damageable : MonoBehaviour
         Rigidbody target = collision.gameObject.GetComponent<Rigidbody>();
         if (target != null)
         {
-            float damage = ((rb.mass + target.mass) * (target.velocity.magnitude + 1) * (rb.velocity.magnitude + 1))/100;
+            float damage = ((rb.mass + target.mass) * (target.velocity.magnitude + 1) * (rb.velocity.magnitude + 1)) / 100;
             // Apply damage to the collided object
             this.takeDamage(damage);
         }
@@ -61,7 +57,7 @@ public abstract class Damageable : MonoBehaviour
         Rigidbody target = other.gameObject.GetComponent<Rigidbody>();
         if (target != null)
         {
-            float damage = ((rb.mass + target.mass) * (target.velocity.magnitude + 1) * (rb.velocity.magnitude + 1))/ 100;
+            float damage = ((rb.mass + target.mass) * (target.velocity.magnitude + 1) * (rb.velocity.magnitude + 1)) / 100;
             // Apply damage to the collided object
             this.takeDamage(damage);
             if (other.gameObject.GetComponent<Damageable>() != null)

@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +9,7 @@ public class ShipSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void AddShip(GameObject ship)
@@ -22,7 +21,7 @@ public class ShipSelection : MonoBehaviour
     {
         ships.Remove(ship);
     }
-        
+
     public Boolean CheckShip(GameObject ship)
     {
         if (ships.Contains(ship))

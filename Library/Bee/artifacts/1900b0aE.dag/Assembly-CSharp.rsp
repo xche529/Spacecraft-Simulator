@@ -357,6 +357,7 @@
 "Assets/Scripts/Damageable.cs"
 "Assets/Scripts/FiringScript.cs"
 "Assets/Scripts/MainCameraMovement.cs"
+"Assets/Scripts/Selectable.cs"
 "Assets/Scripts/ShipExample.cs"
 "Assets/Scripts/ShipSelection.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"

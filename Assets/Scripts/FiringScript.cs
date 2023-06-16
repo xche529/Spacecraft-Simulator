@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FiringScript : MonoBehaviour
@@ -24,11 +22,12 @@ public class FiringScript : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0))
         {
             Shoot();
-        
+
         }
     }
 
-    void Shoot() {
+    void Shoot()
+    {
         timer += Time.deltaTime;
         if (timer >= 1 / fireingRate)
         {

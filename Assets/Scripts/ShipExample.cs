@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Windows;
 
 public class ShipExample : Damageable, ControlableInterface
 {
@@ -20,7 +17,7 @@ public class ShipExample : Damageable, ControlableInterface
         health = 100f;
         maxHealth = 100f;
         shipRb = GetComponent<Rigidbody>();
-        
+
     }
 
     void Update()
@@ -33,7 +30,8 @@ public class ShipExample : Damageable, ControlableInterface
         }
     }
 
-    public void Translate() {
+    public void Translate()
+    {
         // transform the ship
         float horizontal = UnityEngine.Input.GetAxis("Horizontal");
         float vertical = UnityEngine.Input.GetAxis("Vertical");
