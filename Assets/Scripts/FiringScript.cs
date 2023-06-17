@@ -44,7 +44,7 @@ public class FiringScript : MonoBehaviour
     {
         Transform parentTransform = childTransform.parent;
         while (parentTransform != null)
-        {
+        {  
             Rigidbody parentRb = parentTransform.GetComponent<Rigidbody>();
             if (parentRb != null)
             {

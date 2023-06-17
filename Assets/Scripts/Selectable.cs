@@ -14,9 +14,7 @@ public class Selectable : MonoBehaviour
 
     private void OnMouseDown()
     {
-
         cameraScript.setTarget(this.gameObject);
-
     }
 }
 
